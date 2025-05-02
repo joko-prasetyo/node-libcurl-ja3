@@ -3,7 +3,7 @@ import express from 'express'
 import { Server } from 'http'
 import { AddressInfo } from 'net'
 import { Browser, BROWSER_CONFIGS, impersonate } from '../../lib'
-import { create as createBinaryBrowser } from '../../lib/impersonate/binaryBrowser'
+//import { create as createBinaryBrowser } from '../../lib/impersonate/binaryBrowser'
 
 describe('Browser Impersonation', function () {
 	let server: Server

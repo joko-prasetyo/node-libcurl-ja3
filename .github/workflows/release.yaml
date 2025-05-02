@@ -60,6 +60,7 @@ jobs:
 
       - name: Prepare environment
         id: prepare-env
+        shell: bash
         run: |
           # make directories
           mkdir -p deps/curl-impersonate/build

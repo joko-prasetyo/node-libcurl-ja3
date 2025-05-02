@@ -190,11 +190,12 @@ jobs:
         run: |
           npm pack
           pkgver='${{ steps.prepare-env.outputs.pkgver }}'
-          tar xf "jokoprasetyo-node-libcurl-ja3-$pkgver.tgz" -C build
-          rm -f "jokoprasetyo-node-libcurl-ja3-$pkgver.tgz"
+          mv "jokoprasetyo-node-libcurl-ja3-$pkgver.tgz" "node-libcurl-ja3-$pkgver.tgz"
+          tar xf "node-libcurl-ja3-$pkgver.tgz" -C build
+          rm -f "node-libcurl-ja3-$pkgver.tgz"
           cd build
-          mv package jokoprasetyo-node-libcurl-ja3
-          tar zcf '${{ steps.prepare-env.outputs.package_artifact }}.tar.gz' jokoprasetyo-node-libcurl-ja3
+          mv package node-libcurl-ja3
+          tar zcf '${{ steps.prepare-env.outputs.package_artifact }}.tar.gz' node-libcurl-ja3
 
       - if: runner.os == 'Linux' && matrix.node == '20'
         name: Upload package tarball

@@ -41,6 +41,7 @@ jobs:
         os:
           - macos-15
           - ubuntu-22.04
+          - windows-latest
         node:
           - 20
           - 22
@@ -123,6 +124,12 @@ jobs:
         name: Install build packages on macOS
         run: brew install automake bash libtool make meson ninja
 
+      - if: runner.os == 'Windows'
+        name: Install build packages on Windows
+        run: |
+          choco install -y make
+          # Add other tools as needed
+
       - name: Yarn
         run: npm_config_build_from_source=true yarn install --frozen-lockfile
 
@@ -193,6 +200,7 @@ jobs:
         run: |
           npm pack
           pkgver='${{ steps.prepare-env.outputs.pkgver }}'
+          mv "jokoprasetyo-node-libcurl-ja3-$pkgver.tgz" "node-libcurl-ja3-$pkgver.tgz"
           tar xf "node-libcurl-ja3-$pkgver.tgz" -C build
           rm -f "node-libcurl-ja3-$pkgver.tgz"
           cd build

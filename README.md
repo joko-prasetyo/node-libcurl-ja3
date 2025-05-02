@@ -4,7 +4,7 @@
 [![license][license-image]][license-url]
 
 [npm-image]:https://img.shields.io/npm/v/node-libcurl-ja3.svg?style=flat-square
-[npm-url]:https://www.npmjs.org/package/node-libcurl-ja3
+[npm-url]:https://www.npmjs.org/package/@jokoprasetyo/node-libcurl-ja3
 [license-image]:https://img.shields.io/npm/l/node-libcurl-ja3?style=flat-square
 [license-url]:https://raw.githubusercontent.com/andrewmackrodt/node-libcurl-ja3/develop/LICENSE
 

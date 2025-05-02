@@ -130,7 +130,9 @@
   },
   "os": [
     "darwin",
-    "linux"
+    "linux",
+	"macos",
+	"win32"
   ],
   "np": {
     "cleanup": false

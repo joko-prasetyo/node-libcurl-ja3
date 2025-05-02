@@ -132,6 +132,7 @@ jobs:
           # Add other tools as needed
 
       - name: Yarn
+        shell: bash
         run: npm_config_build_from_source=true yarn install --frozen-lockfile
 
       - name: Build

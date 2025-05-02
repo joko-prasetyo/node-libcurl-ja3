@@ -122,6 +122,11 @@ jobs:
         name: Install build packages on macOS
         run: brew install automake bash libtool make meson ninja
 
+      - if: runner.os == 'Windows'
+        name: Install build tools on Windows
+        run: |
+          npm install --global windows-build-tools
+
       - name: Yarn
         shell: bash
         run: npm_config_build_from_source=true yarn install --frozen-lockfile
@@ -210,3 +215,11 @@ jobs:
 
       - name: Test
         run: yarn test
+
+      - if: runner.os == 'Windows'
+        name: Build native module on Windows
+        run: yarn build:dist
+
+      - if: runner.os == 'Windows'
+        name: List build output
+        run: dir lib\binding\Release\node-v*
